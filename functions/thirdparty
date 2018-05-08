@@ -33,6 +33,8 @@ source $dir/functions/apps/telegram
 source $dir/functions/apps/gimp
 source $dir/functions/apps/gravit
 source $dir/functions/apps/onlyoffice
+source $dir/functions/apps/wavebox
+source $dir/functions/apps/tusk
 
 # Install Third-Party Applications
 function thirdparty {
