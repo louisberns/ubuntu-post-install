@@ -35,6 +35,7 @@ source $dir/functions/apps/gravit
 source $dir/functions/apps/onlyoffice
 source $dir/functions/apps/wavebox
 source $dir/functions/apps/tusk
+source $dir/functions/apps/retroarch
 
 # Install Third-Party Applications
 function thirdparty {

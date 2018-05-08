@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# SNAP Function Template
+#
+# most of this template is complete, you'll just need to change the three variables and the function name
+#
+#	package_name = the name of the package you'll be installing from SNAP
+#	app_name = a human readable name of the app you're installing
+#
+# next set the 'function_name' and reference it in the 'thirdparty' function in the 'thirdparty' function file
+# and be sure to 'source' it in the list at the top of that file as well
+
+# Function
+function retroarch {
+	# Variables
+	NAME="Retroarch"
+	PACKAGE=retroarch
+	# PPANAME=ppa_url
+	# Install
+	echo_message header 'Begin '$NAME' installation'
+	# Check if package is installed
+	check_packages $PACKAGE
+	EXITSTATUS=$?
+	# If package is not installed
+	if [ $EXITSTATUS = 1 ]; then
+		echo_message info $NAME 'is not installed.'
+		echo 'Proceeding'
+		# Install
+		echo_message info 'Installing '$NAME'...'
+		elevate_privilege "snap install $PACKAGE"
+		# Done
+		echo_message success "Installation of '$PACKAGE' complete."
+		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 64
+		thirdparty
+	else
+		# Already installed
+		echo_message info $NAME 'already installed.'
+		whiptail --title "Finished" --msgbox "$NAME is already installed." 8 64
+		thirdparty
+	fi
+}
