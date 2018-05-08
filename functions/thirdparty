@@ -29,7 +29,10 @@ source $dir/functions/apps/slack
 # source $dir/functions/apps/synergy
 source $dir/functions/apps/telegram
 # source $dir/functions/apps/vlc
-source $dir/functions/apps/wine
+# source $dir/functions/apps/wine
+source $dir/functions/apps/gimp
+source $dir/functions/apps/gravit
+source $dir/functions/apps/onlyoffice
 
 # Install Third-Party Applications
 function thirdparty {

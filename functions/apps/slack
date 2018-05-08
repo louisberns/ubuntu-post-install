@@ -1,11 +1,21 @@
 #!/bin/bash
 
-# Slack
+# SNAP Function Template
+#
+# most of this template is complete, you'll just need to change the three variables and the function name
+#
+#	package_name = the name of the package you'll be installing from SNAP
+#	app_name = a human readable name of the app you're installing
+#
+# next set the 'function_name' and reference it in the 'thirdparty' function in the 'thirdparty' function file
+# and be sure to 'source' it in the list at the top of that file as well
+
+# Function
 function slack {
 	# Variables
 	NAME="Slack"
-	PACKAGE=slack-desktop
-	VERSION=2.8.2
+	PACKAGE=slack
+	# PPANAME=ppa_url
 	# Install
 	echo_message header 'Begin '$NAME' installation'
 	# Check if package is installed
@@ -15,25 +25,9 @@ function slack {
 	if [ $EXITSTATUS = 1 ]; then
 		echo_message info $NAME 'is not installed.'
 		echo 'Proceeding'
-		echo_message info 'Downloading '$NAME'...'
-		# Download Debian file that matches system architecture
-		case `uname -i` in
-			i386|i486|i586|i686)
-				curl -O https://downloads.slack-edge.com/linux_releases/slack-desktop-${VERSION}-i386.deb
-				;;
-			x86_64)
-				curl -O https://downloads.slack-edge.com/linux_releases/slack-desktop-${VERSION}-amd64.deb
-				;;
-			*)
-				whiptail --title "Error." --msgbox "No remote packages available to download." 8 64
-				;;
-		esac
-		# Install package(s)
+		# Install
 		echo_message info 'Installing '$NAME'...'
-		elevate_privilege "dpkg -i $PACKAGE*.deb"
-		elevate_privilege "apt install -fy"
-		# Cleanup and finish
-		rm ${PACKAGE}-*.deb
+		elevate_privilege "snap install $PACKAGE"
 		# Done
 		echo_message success "Installation of '$PACKAGE' complete."
 		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 64

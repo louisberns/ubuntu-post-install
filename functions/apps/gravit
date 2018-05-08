@@ -11,10 +11,10 @@
 # and be sure to 'source' it in the list at the top of that file as well
 
 # Function
-function telegram {
+function gravit {
 	# Variables
-	NAME="Telegram"
-	PACKAGE=telegram-desktop
+	NAME="Gravit Designer"
+	PACKAGE=gravit-designer
 	# PPANAME=ppa_url
 	# Install
 	echo_message header 'Begin '$NAME' installation'

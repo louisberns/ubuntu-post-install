@@ -11,10 +11,10 @@
 # and be sure to 'source' it in the list at the top of that file as well
 
 # Function
-function telegram {
+function gimp {
 	# Variables
-	NAME="Telegram"
-	PACKAGE=telegram-desktop
+	NAME="Gimp"
+	PACKAGE=gimp
 	# PPANAME=ppa_url
 	# Install
 	echo_message header 'Begin '$NAME' installation'
