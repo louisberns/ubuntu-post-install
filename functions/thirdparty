@@ -36,6 +36,7 @@ source $dir/functions/apps/onlyoffice
 source $dir/functions/apps/wavebox
 source $dir/functions/apps/tusk
 source $dir/functions/apps/retroarch
+source $dir/functions/apps/nvidia
 
 # Install Third-Party Applications
 function thirdparty {
@@ -51,19 +52,26 @@ function thirdparty {
 		--ok-button "Install" \
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
+		'atom'		'Atom' \
 		'dropbox'		'Dropbox' \
 		'firefox'		'Firefox (Beta)' \
 		'flatpak'		'Flatpak' \
+		'gimp'		'Gimp' \
+		'gravit'		'Gravit' \
 		'inkscape'		'Inkscape' \
+		'nvidia'		'Nvidia Drivers' \
+		'onlyoffice'		'Onlyoffice' \
 		'peek'			'Peek' \
 		'pia'			'Private Internet Access' \
 		'plex'			'Plex Media Server' \
+		'retroarch'			'Retroarch' \
 		'riot'			'Riot Chat' \
 		'rvm'			'Ruby Version Manager (RVM)' \
 		'slack'			'Slack Desktop' \
-		'steam'			'Steam' \
 		'sublime'		'Sublime Text 3' \
 		'telegram'		'Telegram' \
+		'tusk'		'Tusk' \
+		'wavebox'		'Wavebox' \
 		3>&1 1>&2 2>&3)
 	else
 		main

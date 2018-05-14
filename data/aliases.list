@@ -13,3 +13,17 @@ alias df='df -h'
 
 # ignore common typos
 alias naon='nano'
+alias gti='git'
+
+# fast git
+alias g='git'
+alias gi='git init'
+alias gp='git push'
+alias gu='git pull'
+alias gpom='git push origin master'
+alias guom='git pull origin master'
+alias gl='git log'
+alias glo='git log --graph --oneline'
+alias gm='git merge'
+alias gc='git checkout'
+alias gcl='git clone'
